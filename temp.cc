@@ -12,7 +12,7 @@ std::ostringstream str;
 std::vector<int> nlist;
 std::vector<int> com;
 
-void call(int size){
+void call(int size){ //인수 = 현재 몇개 쌓았나?
 
   if(size == M){//push_back 안씀 > 미리 사이즈는 정해진 상태일것. 따라서 size()가 아닌 size를 따로 저장.
     for (int i : com) {
@@ -42,7 +42,7 @@ int main(){
         nlist.push_back(temp);
     }
     nlist.resize(N); //이거 관련도 볼것. GPT 를 참고하니 크기를 0인상태로 배열처럼 [] 사용하면 기존이 가변 길이라서 0인 상태에서 확인없이 다음 접근 > 좆됌.
-    com.resize(M);
+    com.resize(M); //크기를 이걸로 해둘 것이기 때문에 size()를 조정해가면서 하는 건 불가능함.
 
     sort(nlist.begin(), nlist.end());
 
