@@ -46,6 +46,7 @@
         "typeinfo": "cpp",
         "set": "cpp",
         "sstream": "cpp",
-        "bj15666": "cpp"
+        "bj15666": "cpp",
+        "cinttypes": "cpp"
     }
 }
