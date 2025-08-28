@@ -4,38 +4,45 @@
 #include <iostream>
 #include <deque>
 void realmain(){
-  int M, posi;
-  std::cin >> M >> posi;
+  int M, nowposi;
+  std::cin >> M >> nowposi;
   std::deque<int> q;
-  int first = q.size();
 
-  for(int i = 0; i< M; i++){
+  for(int i = 0; i<M; i++) {
     int temp;
     std::cin >> temp;
     q.push_back(temp);
   }
-  while(posi != -1) {
+
+  int firstsize = q.size();
+
+  while(nowposi != -1) {
     int max = 0;
     for(int i : q) {
-      if(max < i)
+      if(i > max)
       max = i;
     }
-    if(q.front() == max){
+
+    if(q.front() < max){
+      int temp;
+      temp = q.front();
       q.pop_front();
-      posi--;
-    } else {
-      int temp = q.front();
-      q.pop_front();
+      nowposi--;
       q.push_back(temp);
-      if(posi == 0){
-        posi =q.size() -1; 
-      } else {
-        posi--;
+      if(nowposi == -1){
+        nowposi = q.size() -1;
       }
+
+    
+    } else {
+      q.pop_front();
+      nowposi--;
     }
+  
   }
 
-  std::cout << (first - q.size() )<<'\n';
+  std::cout << firstsize-q.size() << '\n';
+  
 }
 
 int main() {
