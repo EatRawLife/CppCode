@@ -9,8 +9,6 @@ int N, M, R;
 
 int main() {
 
-
-
   std::cin >> N >> M >> R;
 
   int arr[N*M];
